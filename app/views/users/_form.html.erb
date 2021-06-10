@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "Nombre" %>
+    <%= f.input :lastname, label: "Apellido" %>
+    <%= f.input :email, label: "Correo Electronico" %>
+    <%= f.input :balance, label: "Saldo" if @user.persisted?%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
