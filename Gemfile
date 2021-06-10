@@ -56,7 +56,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added by YH
-gem 'devise'
+gem 'simple_form'
 gem 'react-rails'
 gem 'whenever'
 gem 'sidekiq'
