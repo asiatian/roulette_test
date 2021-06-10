@@ -1,1 +1,28 @@
 <%= react_component("Index", {date: @date}) %>
+<%= link_to 'Ver Jugadores', users_path %>
+<table>
+  <thead>
+    <th>Juego</th>
+    <th>Resultado</th>
+    <th>Detalles</th>
+  </thead>
+  <tbody>
+    <% @bets.each do |round, bets| %>
+      <tr>
+        <td><%= "Juego Nº#{round}" %></td>
+        <td><%= bets.first.round.color %></td>
+        <td>
+          <table>
+            <tbody>
+              <% bets.each do |bet| %>
+                <th><%= bet.user.to_s %></th>
+                <td><%= bet.color %></td>
+                <td><%= bet.outcome %></td>
+              <% end %>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -8,7 +8,6 @@ import PropTypes from 'prop-types'
 
 const Index = props => (
   <h1>Ruleta - {props.date}</h1>
-  </br>
 )
 
 Index.defaultProps = {

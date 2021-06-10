@@ -10,7 +10,7 @@ class RoundsController < ApplicationController
       u.balance += -bet
       u.save
     end
-    round.color = selector.random
+    round.update(color: selector.random)
     self.end_game(round)
   end
 

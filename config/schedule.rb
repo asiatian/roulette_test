@@ -20,4 +20,8 @@ every 1.day, at: '12:00 am' do
   runner "User.new_day"
 end
 
+every 3.minutes do
+  runner "RoundsController.start_game"
+end
+
 # Learn more: http://github.com/javan/whenever
