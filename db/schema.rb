@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_165339) do
+ActiveRecord::Schema.define(version: 2021_06_10_064558) do
+
+  create_table "rounds", force: :cascade do |t|
+    t.integer "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["color"], name: "index_rounds_on_color"
+  end
+
+  create_table "user_rounds", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "round_id", null: false
+    t.integer "color"
+    t.decimal "amount", precision: 19, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["color"], name: "index_user_rounds_on_color"
+    t.index ["round_id"], name: "index_user_rounds_on_round_id"
+    t.index ["user_id"], name: "index_user_rounds_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,4 +40,6 @@ ActiveRecord::Schema.define(version: 2021_06_07_165339) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "user_rounds", "rounds"
+  add_foreign_key "user_rounds", "users"
 end

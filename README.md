@@ -20,4 +20,4 @@ $ rake db:create
 $ npm install
 ```
 
-WIP
+WIP   
