@@ -238,6 +238,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3, >= 6.1.3.2)
   react-rails
+  redis
   sass-rails (>= 6)
   selenium-webdriver
   sidekiq

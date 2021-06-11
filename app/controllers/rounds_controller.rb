@@ -1,11 +1,12 @@
 class RoundsController < ApplicationController
   # POST /round
   def self.start_game
-    selector = WalkerMethod.new(Round.colors.values, [2,49,49])
-    round = Round.create()
+    selector  = WalkerMethod.new(Round.colors.values, [2,49,49])
+    round     = Round.create()
+    bet_range = Weather.bet_range
     round.save
     User.where("balance > 0").each do |u|
-      u.balance > 1000 ? bet = rand(0.08..0.15) * u.balance : bet = u.balance
+      u.balance > 1000 ? bet = rand(bet_range) * u.balance : bet = u.balance
       UserRound.create(user:u , round: round, amount: bet, color: selector.random)
       u.balance += -bet
       u.save

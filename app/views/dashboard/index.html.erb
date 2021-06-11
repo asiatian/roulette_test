@@ -10,14 +10,14 @@
     <% @bets.each do |round, bets| %>
       <tr>
         <td><%= "Juego Nº#{round}" %></td>
-        <td><%= bets.first.round.color %></td>
+        <td><%= I18n.t bets.first.round.color %></td>
         <td>
           <table>
             <tbody>
               <% bets.each do |bet| %>
                 <th><%= bet.user.to_s %></th>
-                <td><%= bet.color %></td>
-                <td><%= bet.outcome %></td>
+                <td><%= I18n.t bet.color %></td>
+                <td>$ <%= number_to_currency bet.outcome,precision:0   %></td>
               <% end %>
             </tbody>
           </table>

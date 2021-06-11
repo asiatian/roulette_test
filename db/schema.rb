@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_064558) do
+ActiveRecord::Schema.define(version: 2021_06_11_020349) do
 
   create_table "rounds", force: :cascade do |t|
     t.integer "color"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2021_06_10_064558) do
     t.decimal "balance", precision: 19, scale: 2, default: "10000.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "weathers", force: :cascade do |t|
+    t.date "date"
+    t.float "temperature"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["date"], name: "index_weathers_on_date", unique: true
   end
 
   add_foreign_key "user_rounds", "rounds"
