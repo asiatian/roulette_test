@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+if User.count == 0
+  User.create(id:1, name: "Usuario 1", lastname: "Apellido", balance: 10000)
+end
+
+if Weather.count == 0
+  Weather.update_week
+end
+
+if Round.count == 0
+  RoundsController.start_game
+end
