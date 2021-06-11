@@ -1,6 +1,6 @@
 <%= react_component("Index", {date: @date}) %>
 <%= link_to 'Ver Jugadores', users_path %>
-<table>
+<table id="rounds_table">
   <thead>
     <th>Juego</th>
     <th>Resultado</th>
@@ -17,7 +17,7 @@
               <% bets.each do |bet| %>
                 <th><%= bet.user.to_s %></th>
                 <td><%= I18n.t bet.color %></td>
-                <td>$ <%= number_to_currency bet.outcome,precision:0   %></td>
+                <td>$ <%= bet.outcome  %></td>
               <% end %>
             </tbody>
           </table>
