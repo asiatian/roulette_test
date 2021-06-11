@@ -1,7 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :update_week => :environment do
   puts "Updating week..."
-  Weather.update
+  Weather.update_week
   puts "done."
 end
 
