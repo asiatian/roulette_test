@@ -6,10 +6,23 @@ default: &default
 development:
   <<: *default
   database: my_app_development
+  username: rails_dev
+  password: qwert123
+
+  host: localhost
+  port: 5432
 
 test:
   <<: *default
   database: my_app_test
+  username: rails_dev
+  password: qwert123
+
+  host: localhost
+  port: 5432
 
 production:
   <<: *default
+  database: myapp_production
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
