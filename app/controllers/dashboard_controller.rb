@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
     @bets = UserRound.includes(:user, :round).all.group_by(&:round_id)
   end
 
-  def do_daily
+  def self.do_daily
     User.new_day
     Weather.update_week
   end
