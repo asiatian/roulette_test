@@ -23,6 +23,8 @@ class RoundsController < ApplicationController
         ur.green? ? ur.user.update(balance: user_balance + amount*15) : ur.user.update(balance: user_balance + amount*2)
       end
     end
+    structured_data = {id: round.id, color: I18n.t(round.color), details: round.user_rounds.map{|r| {name: r.user.to_s, color: I18n.t(r.color), amount: r.outcome}}}
+    ActionCable.server.broadcast "game_room_channel", structured_data
   end
 
 end

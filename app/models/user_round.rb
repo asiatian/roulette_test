@@ -8,7 +8,7 @@ class UserRound < ApplicationRecord
      if round.color == color
        self.green? ? "#{self.amount*15}" : "#{self.amount*2}"
      else
-       "#{-amount}"
+       "-#{amount}"
      end
   end
 end
