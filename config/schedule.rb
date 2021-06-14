@@ -22,7 +22,7 @@ every 1.day, at: '12:00 am' do
 end
 
 every 3.minutes do
-  runner "RoundsController.start_game"
+  runner "Round.start_game"
 end
 
 # Learn more: http://github.com/javan/whenever

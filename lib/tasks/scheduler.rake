@@ -7,6 +7,6 @@ end
 
 task :play => :environment do
   puts "Playing..."
-  RoundsController.start_game
+  Round.start_game
   puts "done."
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_020349) do
+ActiveRecord::Schema.define(version: 2021_06_14_040626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_06_11_020349) do
     t.decimal "amount", precision: 19, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "bet", precision: 19, scale: 2
+    t.decimal "percentage", precision: 4, scale: 2
     t.index ["color"], name: "index_user_rounds_on_color"
     t.index ["round_id"], name: "index_user_rounds_on_round_id"
     t.index ["user_id"], name: "index_user_rounds_on_user_id"
