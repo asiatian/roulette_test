@@ -4,11 +4,11 @@ This is a test program.
 
 ## Requirements
 
-*Ruby 3.0.0
-*Rails 6.1.3.2
-*Redis (Redis server needs to be active)
-*React(not used)
-*sqlite
+* Ruby 3.0.0
+* Rails 6.1.3.2
+* Redis (Redis server needs to be active)
+* React
+* postgresql
 
 ## Installation
 
